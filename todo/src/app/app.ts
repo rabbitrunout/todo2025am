@@ -14,7 +14,7 @@ export class App {
   private list = new TodoList("Irina", [
     new TodoItem("Go for run", true),
     new TodoItem("Get flowers"), 
-    new TodoItem("Collect tickets"),
+    new TodoItem("Collect tickets")
   ]);
 
   get username(): string
@@ -23,6 +23,6 @@ export class App {
   }
 
   get itemCount(): number{
-    return this.list.items.length;
+    return this.list.items.filter(item=>!item.complete).length;
   }
 }
